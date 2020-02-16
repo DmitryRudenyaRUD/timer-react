@@ -1,6 +1,7 @@
 import store from './State';
 
 export function handleValues(expect, value, render) {
+    console.log(expect);
     switch(expect) {
         case 'start':
             currentButtonStart(value, render);
@@ -10,6 +11,8 @@ export function handleValues(expect, value, render) {
         case 'reset':
             reset(render);
             break;
+        default:
+            return;
     }
 }
 

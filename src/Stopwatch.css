@@ -1,4 +1,9 @@
-.indicatorStopwatch {
-    margin-top: 20px;
-    font-family: sans-serif;
+.containerButtons button{
+    font-size: 15px;
+    background-color: whitesmoke;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
 }

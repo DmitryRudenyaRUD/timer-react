@@ -15,6 +15,7 @@ export default class Stopwatch extends React.Component {
     }
 
     componentDidMount() {
+        if(this.timerID) clearInterval(this.timerID);
         this.timerID = setInterval(
             () => this.tick(),
             1000
@@ -46,7 +47,7 @@ export default class Stopwatch extends React.Component {
         return (
             <div>
                 <h1>{this.props.store.stopwatch}</h1>
-                <div>
+                <div className='containerButtons'>
                     <button onClick={this.start}>START</button>
                     <button onClick={this.stop}>STOP</button>
                     <button onClick={this.reset}>RESET</button>

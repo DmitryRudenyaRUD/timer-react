@@ -15,7 +15,8 @@ export default class View extends React.Component {
                 {'CLOCK' === isToggle && <Clock/>}
                 {'STOPWATCH' === isToggle && <Stopwatch
                     store={this.props.store}
-                    render={this.props.render}/>}
+                    render={this.props.render}/>
+                }
                 {'TIMER' === isToggle && <Timer/>}
             </div>
         )
