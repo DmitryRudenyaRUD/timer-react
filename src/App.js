@@ -19,11 +19,11 @@ export default class App extends React.Component {
             <div className="container">
                 <ContainerLinks
                     isToggle={this.state.isToggle}
-                    handleToggle={this.handleToggle}
-                    />
+                    handleToggle={this.handleToggle}/>
                 <View
                     store={store}
-                    isToggle={this.state.isToggle}/>
+                    isToggle={this.state.isToggle}
+                    render={this.props.render}/>
             </div>
         );
     }

@@ -1,14 +1,19 @@
 import store from './State';
 
-export default function handleValues(expect, value) {
+export function handleValues(expect, value, render) {
     switch(expect) {
         case 'start':
-            currentButtonStart(value);
+            currentButtonStart(value, render);
+            break;
+        case 'stop':
+            break;
+        case 'reset':
+            reset(render);
             break;
     }
 }
 
-function currentButtonStart(value) {
+function currentButtonStart(value, render) {
     let [h, m, s] = value.split(':');
 
     if(parseInt(s) === 59) {
@@ -26,4 +31,11 @@ function currentButtonStart(value) {
 
 
     store.record = [h, m, s];
+    render();
+}
+
+function reset(render) {
+    let [h, m, s] = [0, 0, 0];
+    store.record = [h, m, s];
+    render();
 }

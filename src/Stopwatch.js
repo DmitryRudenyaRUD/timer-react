@@ -1,8 +1,8 @@
 import React from 'react';
-import Reducer from './Reducer';
+import {handleValues} from './Reducer';
 import './Stopwatch.css';
 
-export default class Stopwatch extends React.PureComponent {
+export default class Stopwatch extends React.Component {
     constructor(props) {
         super(props);
         this.start = this.start.bind(this);
@@ -13,18 +13,21 @@ export default class Stopwatch extends React.PureComponent {
             pressedButton: null
         }
     }
+
     componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
             1000
         );
     }
+
     start() {
-        this.setState({pressedButton: 'start'})
+        return (this.state.pressedButton !== 'start') ?
+            this.setState({pressedButton: 'start'}) :
+            null
     }
 
     stop() {
-        clearInterval(this.timerID);
         this.setState({pressedButton: 'stop'})
     }
 
@@ -35,7 +38,8 @@ export default class Stopwatch extends React.PureComponent {
     tick() {
         let value = this.props.store.stopwatch;
         let pressed = this.state.pressedButton;
-        Reducer(pressed, value);
+        let render = this.props.render;
+        handleValues(pressed, value, render);
     }
 
     render() {

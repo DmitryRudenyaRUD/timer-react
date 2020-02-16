@@ -10,11 +10,13 @@ export default class View extends React.Component {
     render() {
         let isToggle = this.props.isToggle;
 
-        return(
+        return (
             <div className='indicator'>
-                {'CLOCK' === isToggle && <Clock />}
-                {'STOPWATCH' === isToggle && <Stopwatch store={this.props.store} />}
-                {'TIMER' === isToggle && <Timer />}
+                {'CLOCK' === isToggle && <Clock/>}
+                {'STOPWATCH' === isToggle && <Stopwatch
+                    store={this.props.store}
+                    render={this.props.render}/>}
+                {'TIMER' === isToggle && <Timer/>}
             </div>
         )
     }
