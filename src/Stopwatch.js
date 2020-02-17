@@ -10,11 +10,11 @@ export default class Stopwatch extends React.Component {
         this.reset = this.reset.bind(this);
         this.tick = this.tick.bind(this);
         this.state = {
-            pressedButton: null
+            pressedButton: 'stopStopwatch'
         }
     }
 
-    componentDidMount() {;
+    componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
             1000
@@ -22,22 +22,22 @@ export default class Stopwatch extends React.Component {
     }
 
     start() {
-        return (this.state.pressedButton !== 'start') ?
-            this.setState({pressedButton: 'start'}) :
+        return (this.state.pressedButton !== 'startStopwatch') ?
+            this.setState({pressedButton: 'startStopwatch'}) :
             null
     }
 
     stop() {
-        this.setState({pressedButton: 'stop'})
+        this.setState({pressedButton: 'stopStopwatch'})
     }
 
     reset() {
-        this.setState({pressedButton: 'reset'})
+        this.setState({pressedButton: 'resetStopwatch'})
     }
 
     tick() {
-        let value = this.props.store.stopwatch;
         let pressed = this.state.pressedButton;
+        let value = this.props.store.stopwatch;
         let render = this.props.render;
         handleValues(pressed, value, render);
     }

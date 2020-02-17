@@ -1,45 +1,56 @@
 import store from './State';
 
 export function handleValues(expect, value, render) {
-
+console.log(expect);
     switch(expect) {
-        case 'start':
-            currentButtonStart(value, render);
+        case 'startStopwatch':
+            handleStartStopwatch(value, render);
             break;
-        case 'stop':
+        case 'resetStopwatch':
+            resetStopwatch(render);
             break;
-        case 'reset':
-            reset(render);
+        case 'startTimer':
+            handleStartTimer(value, render);
             break;
+        case 'resetTimer':
+            resetTimer(render);
+            break
         default:
             return;
     }
 }
 
-function currentButtonStart(value, render) {
-    let [h, m, s] = value.split(':');
+function handleStartStopwatch(value, render) {
+    let [h, m, s] = value.split(':').map((item) => parseInt(item));
 
-    if(parseInt(s) === 59) {
-        s = 0;
-        m = parseInt(m) + 1
-    } else s = parseInt(s) + 1;
+    [s, m] = s === 59 ? [s = 0, ++m] : [++s, m];
+    [h, m] = m === 60 ? [m = 0, ++h] : [h, m];
 
-    if(parseInt(m) === 60) {
-        m = 0;
-        h = parseInt(h) + 1
-    }
-
-    h = parseInt(h);
-    m = parseInt(m);
-    let name = currentButtonStart.name;
-
+    const name = handleStartStopwatch.name;
 
     store.record = [name, h, m, s];
     render();
 }
 
-function reset(render) {
-    let name = 'resetStopwatch';
-    store.record = [name];
+const resetStopwatch = (render) =>  {
+    store.record = ['resetStopwatch'];
+    render()
+};
+
+function handleStartTimer(value, render) {
+    let [h, m, s] = value.split(':').map((item) => parseInt(item));
+
+    [h, m] = h > 0 && m === 0 && s === 0 ? [--h, m = 59] : [h, m];  //
+    [m, s] = m > 0 && s === 0 ? [--m, s = 60]  : [m, s];           // nice
+    s = s > 0 ? --s : s;                                          //
+
+    const name = handleStartTimer.name;
+
+    store.record = [name, h, m, s];
     render();
 }
+
+const resetTimer = (render) => {
+    store.record = ['resetTimer'];
+    render()
+};

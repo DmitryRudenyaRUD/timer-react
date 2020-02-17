@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ContainerLinks from './ContainerLinks';
 import View from './View';
-import store from './State';
+
 
 export default class App extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
                     isToggle={this.state.isToggle}
                     handleToggle={this.handleToggle}/>
                 <View
-                    store={store}
+                    store={this.props.store}
                     isToggle={this.state.isToggle}
                     render={this.props.render}/>
             </div>
