@@ -13,12 +13,15 @@ export default class View extends React.Component {
         return (
             <div className='indicator'>
                 {'CLOCK' === isToggle && <Clock/>}
-                {'STOPWATCH' === isToggle && <Stopwatch
-                    store={this.props.store}
-                    render={this.props.render}/>
-                }
-                {'TIMER' === isToggle && <Timer/>}
-            </div>
+                <div style={{display: 'STOPWATCH' === isToggle ? 'block' : 'none'}}>
+                    <Stopwatch
+                        store={this.props.store}
+                        render={this.props.render}/>
+                </div>
+                <div style={{display: 'TIMER' === isToggle ? 'block' : 'none'}}>
+                    <Timer/>
+                </div>
+             </div>
         )
     }
 }

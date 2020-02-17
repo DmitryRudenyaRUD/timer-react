@@ -14,8 +14,7 @@ export default class Stopwatch extends React.Component {
         }
     }
 
-    componentDidMount() {
-        if(this.timerID) clearInterval(this.timerID);
+    componentDidMount() {;
         this.timerID = setInterval(
             () => this.tick(),
             1000
