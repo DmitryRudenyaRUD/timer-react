@@ -1,7 +1,7 @@
 import store from './State';
 
 export function handleValues(expect, value, render) {
-    console.log(expect);
+
     switch(expect) {
         case 'start':
             currentButtonStart(value, render);
@@ -31,14 +31,15 @@ function currentButtonStart(value, render) {
 
     h = parseInt(h);
     m = parseInt(m);
+    let name = currentButtonStart.name;
 
 
-    store.record = [h, m, s];
+    store.record = [name, h, m, s];
     render();
 }
 
 function reset(render) {
-    let [h, m, s] = [0, 0, 0];
-    store.record = [h, m, s];
+    let name = 'resetStopwatch';
+    store.record = [name];
     render();
 }
