@@ -1,0 +1,30 @@
+.setButton {
+    width: 220px;
+    padding: 0 50px 0 50px;
+}
+.setContainer {
+    display: flex;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.setContainer input {
+    outline: none;
+    border: none;
+    caret-color: transparent;
+    text-align: right;
+    width: 65px;
+    height: 80px;
+    margin-top: -5px;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+.blink {
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    0% { color: #000000; }
+    50% { color: #31b1a4; }
+    100% { color: #000000; }
+}

@@ -7,6 +7,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PATH_TO_GIT" value="D:Git" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,7 +54,10 @@
       <workItem from="1581881157362" duration="4266000" />
       <workItem from="1581885517068" duration="709000" />
       <workItem from="1581886388843" duration="1236000" />
-      <workItem from="1581955516457" duration="5211000" />
+      <workItem from="1581955516457" duration="8395000" />
+      <workItem from="1582021257380" duration="17000" />
+      <workItem from="1582021310583" duration="1353000" />
+      <workItem from="1582036401930" duration="19534000" />
     </task>
     <servers />
   </component>

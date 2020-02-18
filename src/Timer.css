@@ -1,0 +1,18 @@
+.containerButtons button{
+    font-size: 15px;
+    background-color: whitesmoke;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.alarm {
+    animation: alarm 1s linear infinite;
+}
+@keyframes alarm {
+    0% { color: #F00; font-size: 1em;}
+    50% { color: #FBB; font-size: 1.3em;}
+    100% { color: #F00; font-size: 1em;}
+}
